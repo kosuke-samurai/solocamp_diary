@@ -17,8 +17,10 @@ const Home: NextPage = () => {
   
   return (
     <>
-    <Feed />
-    </>
+
+        <Feed />
+
+    </> 
   )
 }
 

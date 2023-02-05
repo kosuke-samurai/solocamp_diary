@@ -17,6 +17,9 @@ import { AdminUpdateSite } from "@/components/AdminUpdateSite"
 import {format} from 'date-fns'
 import ja from "date-fns/locale/ja"
 
+import classes from "./SiteItem.module.css"
+
+
 export const SiteItemMemo: FC<Site> = ({
     id,
     created_at,
@@ -55,9 +58,36 @@ export const SiteItemMemo: FC<Site> = ({
     //追記↓
     const [openEdit, setOpenEdit] = useState(false)
 
+//追記↓CSS
+if (typeof window !== "undefined") {
+ 
+const setFillHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+let vw = window.innerWidth;
+
+window.addEventListener('resize', () => {
+  if (vw === window.innerWidth) {
+  // 画面の横幅にサイズ変動がないので処理を終える
+    return;
+  }
+
+  // 画面の横幅のサイズ変動があった時のみ高さを再計算する
+  vw = window.innerWidth;
+  setFillHeight();
+});
+
+// 初期化
+setFillHeight(); 
+}
+
+
   return (
       <>
-{!openEdit && (
+      {!openEdit && (
+<div className={classes.container}>
         <li className="w-80">
         <div className="my-3 w-full border border-dashed border-gray-400" />
         <div className="flex items-center justify-between">
@@ -140,7 +170,8 @@ export const SiteItemMemo: FC<Site> = ({
         <div className="my-3 flex justify-center">
           {isLoadingMainImg  && <Spinner />}
         </div>                
-     </li>
+          </li>
+</div>
 )}
           
           {session?.user?.id === user_id && openEdit && (

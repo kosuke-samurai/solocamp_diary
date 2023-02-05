@@ -1,0 +1,27 @@
+
+.container {
+    width: 100%;
+    height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../public/img/top/camp_top.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+
+}
+/* .titlecover{
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.title{
+    text-align: center;
+    color: #fff;
+}

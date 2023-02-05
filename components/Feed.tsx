@@ -1,7 +1,11 @@
 import { FC } from "react";
 import { useQuerySites } from "@/hooks/useQuerySites";
 import { SiteItem } from "./SiteItem";
+import { Top } from "./Top";
 import {AdminUpdateSite} from "./AdminUpdateSite";
+
+import React from 'react';
+import classes from './Feed.module.css'
 
 
 
@@ -11,7 +15,14 @@ export const Feed: FC = () => {
 
   return (
       <>
-          <ul data-testid="ul-post" className="my-5">
+    <div className={classes.fullscreen}>
+        <div className={classes.container}>         
+            <Top />
+        </div> 
+        <div className={classes.container}>   
+           <Top />
+        </div> 
+          {/* <ul data-testid="ul-post" className="my-5">
               {sites?.map((site) => (
                   <SiteItem
                       key={site.id}
@@ -38,8 +49,8 @@ export const Feed: FC = () => {
                     adress={site.adress}
                   />
               ))}
-          </ul>
-
+          </ul> */}
+    </div>
           {}
 {/* <AdminUpdateSite /> */}
       </>
