@@ -23,9 +23,10 @@ export const Feed: FC = () => {
            <Top />
         </div> 
           
+        
           <div className="font-rich">
             {sites?.map((site) => (
-                 
+                  
                   <SiteItem
                     key={site.id}
                     id={site.id}
@@ -48,12 +49,12 @@ export const Feed: FC = () => {
                     water={site.water}
                     other={site.other}
                     reserve={site.reserve}
-                    adress={site.adress}
+                adress={site.adress}
                 />
-               
+                
               ))}
           </div> 
-          
+        
          
     </div>
          
