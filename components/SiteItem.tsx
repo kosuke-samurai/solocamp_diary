@@ -158,7 +158,7 @@ setFillHeight();
 
   <div className="">
     <dl>
-      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div className="bg-gray-50 px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt className="text-xs font-medium text-gray-500">イチオシPOINT</dt>
         <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{pros}</dd>
       </div>
@@ -166,7 +166,7 @@ setFillHeight();
         <dt className="text-xs font-medium text-gray-500">イマイチPOINT</dt>
         <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{cons}</dd>
       </div>
-      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div className="bg-gray-50 px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt className="text-xs font-medium text-gray-500">お風呂</dt>
         <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{onsen}</dd>
       </div>
@@ -174,7 +174,7 @@ setFillHeight();
         <dt className="text-xs font-medium text-gray-500">その他</dt>
         <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{other}</dd>
       </div>
-      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div className="bg-gray-50 px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt className="text-xs font-medium text-gray-500">予約</dt>
         <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{reserve}</dd>
       </div>
@@ -230,12 +230,14 @@ setFillHeight();
 )}
           
           {session?.user?.id === user_id && openEdit && (
-            <div className="w-10/12 mx-auto md:max-w-md">
+        <div>  
+        <div className="w-10/12 mx-auto md:max-w-md">
               <AdminUpdateSite />
                   <button
                       className="w-full flex justify-center my-5 rounded bg-indigo-600 px-3 py-2 text-sm font-medium text-white"
                       onClick={() => { setOpenEdit(!openEdit) }}>戻る</button>
-            </div>
+          </div>
+        </div>  
     )}
       </>
   )

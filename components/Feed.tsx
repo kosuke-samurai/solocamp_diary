@@ -22,7 +22,7 @@ export const Feed: FC = () => {
         <div className={classes.container}>   
            <Top />
         </div> 
-          
+    
         
           <div className="font-rich">
             {sites?.map((site) => (
