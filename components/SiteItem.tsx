@@ -19,6 +19,20 @@ import ja from "date-fns/locale/ja"
 
 import classes from "./SiteItem.module.css"
 
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Button from '@mui/material/Button'
+import ButtonGroup from '@mui/material/ButtonGroup'
+import Box from '@mui/material/Box'
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import DeleteIcon from '@mui/icons-material/Delete';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
+import HardwareIcon from '@mui/icons-material/Hardware';
+import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
+import HikingIcon from '@mui/icons-material/Hiking';
+import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 
 export const SiteItemMemo: FC<Site> = ({
     id,
@@ -88,32 +102,87 @@ setFillHeight();
       <>
       {!openEdit && (
 <div className={classes.container}>
-        <li className="w-80">
-        <div className="my-3 w-full border border-dashed border-gray-400" />
-        <div className="flex items-center justify-between">
 
-        <div className="flex">
-            <span className="ml-2 font-bold">{title}</span>            
-            {!created_at ? <Spinner/> : (<span className="ml-2 font-bold">{format(new Date(created_at), 'MM/dd(E) HH:mm', { locale: ja })}</span>)} 
-            <span className="ml-2 font-bold">{hitokoto}</span>            
-            <span className="ml-2 font-bold">{pros}</span>                       
-            <span className="ml-2 font-bold">{cons}</span>            
-            <span className="ml-2 font-bold">{jikabi}</span> 
-            <span className="ml-2 font-bold">{view}</span>            
-            <span className="ml-2 font-bold">{pegs}</span>                     
-            <span className="ml-2 font-bold">{rubbish}</span>            
-            <span className="ml-2 font-bold">{sumi}</span>                   
-            <span className="ml-2 font-bold">{baggage}</span>            
-            <span className="ml-2 font-bold">{style}</span>             
-            <span className="ml-2 font-bold">{food}</span>            
-            <span className="ml-2 font-bold">{onsen}</span>            
-            <span className="ml-2 font-bold">{water}</span>
-            <span className="ml-2 font-bold">{other}</span>     
-            <span className="ml-2 font-bold">{reserve}</span>            
-            <span className="ml-2 font-bold">{adress}</span>
+        <div>
+          {mainUrl && (
+          <div className={classes.image_container}>    
+            <Image
+              src={mainUrl}
+              alt="Image"
+              className=""
+              width={500}
+              height={20}
+                />
+            <div className={classes.site_title}>
+                  <h1 className="text-2xl font-bold">{title}</h1>
+                  <p className="text-xs">{hitokoto}</p>
+            </div>
+          </div>
+          )} 
         </div>
+        <div>
+          {isLoadingMainImg  && <Spinner />}
+        </div>             
+       
+        <p className="text-xs"><LocationOnIcon fontSize='small' />{adress}</p>
 
-                   {session?.user?.id === user_id && (
+        <Box
+                sx={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    '& > *': {
+                        m: 1,
+                    },
+
+                }
+                }
+        > 
+        <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
+            <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small"/><br/><p className='font-rich text-xs'>直火{jikabi}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br/><p className='font-rich text-xs'>{view}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small"/><br/><p className='font-rich text-xs'>容易</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small"/><br/><p className='font-rich text-xs'>{baggage}</p></Box></Button>
+        </ButtonGroup>
+
+        <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
+            <Button><Box sx={{ flexDirection: 'column' }}><LocalDrinkIcon fontSize="small"/><br/><p className='font-rich text-xs'>{water}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br/><p className='font-rich text-xs'>ペグ{pegs}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small"/><br/><p className='font-rich text-xs'>炭捨{sumi}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><HikingIcon fontSize="small" /><br /><p className='font-rich text-xs'>{style}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small"/><br/><p className='font-rich text-xs'>1500円</p></Box></Button>
+          </ButtonGroup>            
+        </Box >
+
+  <div className="">
+    <dl>
+      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt className="text-xs font-medium text-gray-500">イチオシPOINT</dt>
+        <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{pros}</dd>
+      </div>
+      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt className="text-xs font-medium text-gray-500">イマイチPOINT</dt>
+        <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{cons}</dd>
+      </div>
+      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt className="text-xs font-medium text-gray-500">お風呂</dt>
+        <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{onsen}</dd>
+      </div>
+      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt className="text-xs font-medium text-gray-500">その他</dt>
+        <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{other}</dd>
+      </div>
+      <div className="bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt className="text-xs font-medium text-gray-500">予約</dt>
+        <dd className="mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{reserve}</dd>
+      </div>
+   </dl>      
+
+  <div className="flex">
+              {!created_at ? <Spinner /> : (<p className="text-xs">投稿日時：{format(new Date(created_at), 'MM/dd(E) HH:mm', { locale: ja })}</p>)}
+                     {session?.user?.id === user_id && (
                       
                       <div className="flex pr-4">
                           
@@ -152,25 +221,11 @@ setFillHeight();
                               }}
                           />
                       </div>
-                  )}              
-        </div>
-
-
-        <div className="my-3 flex justify-center">
-          {mainUrl && (
-            <Image
-              src={mainUrl}
-              alt="Image"
-              className="rounded-lg"
-              width={300}
-              height={220}
-            />
-          )} 
-        </div>
-        <div className="my-3 flex justify-center">
-          {isLoadingMainImg  && <Spinner />}
-        </div>                
-          </li>
+                  )}   
+  </div>                     
+         
+        
+</div>
 </div>
 )}
           

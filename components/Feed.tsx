@@ -14,7 +14,7 @@ export const Feed: FC = () => {
     
 
   return (
-      <>
+ <>
     <div className={classes.fullscreen}>
         <div className={classes.container}>         
             <Top />
@@ -22,12 +22,14 @@ export const Feed: FC = () => {
         <div className={classes.container}>   
            <Top />
         </div> 
-          {/* <ul data-testid="ul-post" className="my-5">
-              {sites?.map((site) => (
+          
+          <div className="font-rich">
+            {sites?.map((site) => (
+                 
                   <SiteItem
-                      key={site.id}
-                      id={site.id}
-                      user_id={site.user_id}
+                    key={site.id}
+                    id={site.id}
+                    user_id={site.user_id}
                     created_at={site.created_at}
                     title={site.title}
                     main_url={site.main_url}
@@ -47,12 +49,15 @@ export const Feed: FC = () => {
                     other={site.other}
                     reserve={site.reserve}
                     adress={site.adress}
-                  />
+                />
+               
               ))}
-          </ul> */}
+          </div> 
+          
+         
     </div>
-          {}
-{/* <AdminUpdateSite /> */}
-      </>
+         
+
+</>
   )
 }
