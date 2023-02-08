@@ -3,16 +3,12 @@ import Image from "next/image";
 import {
   PencilAltIcon,
   TrashIcon,
-  ExclamationCircleIcon,
-  UserCircleIcon,
 } from '@heroicons/react/solid'
-import { ChatAlt2Icon } from '@heroicons/react/outline'
 import { Spinner } from "./Spinner";
 import useStore from "@/Store";
 import { Site } from "@/types";
 import { useMutateSite } from "@/hooks/useMutateSite";
 import { useDownloadUrl } from "@/hooks/useDownloadUrl";
-import Link from "next/link";
 import { AdminUpdateSite } from "@/components/AdminUpdateSite"
 import {format} from 'date-fns'
 import ja from "date-fns/locale/ja"
@@ -140,7 +136,7 @@ setFillHeight();
                 }
         > 
         <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
-            <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small"/><br/><p className='font-rich text-xs'>直火{jikabi}</p></Box></Button>
+            <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small"/><p className='font-rich text-xs'>直火{jikabi}</p></Box></Button>
             <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br/><p className='font-rich text-xs'>{view}</p></Box></Button>
             <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small"/><br/><p className='font-rich text-xs'>容易</p></Box></Button>
             <Button><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>

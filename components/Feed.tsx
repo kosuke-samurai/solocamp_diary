@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useQuerySites } from "@/hooks/useQuerySites";
 import { SiteItem } from "./SiteItem";
 import { Top } from "./Top";
+import { MapItem } from "./MapItem";
 import {AdminUpdateSite} from "./AdminUpdateSite";
 
 import React from 'react';
@@ -9,7 +10,7 @@ import classes from './Feed.module.css'
 
 
 
-export const Feed: FC = () => {
+export const Feed: FC= () => {
     const { data: sites } = useQuerySites()
     
 
@@ -21,6 +22,9 @@ export const Feed: FC = () => {
         </div> 
         <div className={classes.container}>   
            <Top />
+        </div> 
+        <div className={classes.container}>   
+           <MapItem />
         </div> 
     
         
