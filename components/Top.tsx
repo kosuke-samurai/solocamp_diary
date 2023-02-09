@@ -33,7 +33,8 @@ window.addEventListener('resize', () => {
                 <div className={classes.title}>
                     <h1 className='text-2xl font-rich font-bold'>ソロキャン日和<br/>@九州</h1>
                     <p className='px-1 text-xs font-rich'>福岡在住ソロキャンパーが九州のサイトをメモする備忘録。誰かの豊かなソロキャンライフの一助に--。</p>
-         </div> 
+                </div> 
+        <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
       </div>
           
       </>

@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image';
+import classes from './MapItem.module.css'
 import { Spinner } from './Spinner';
 import { FC, useState, memo, useEffect } from "react";
 import { GoogleMap, Marker, InfoWindow, useLoadScript } from '@react-google-maps/api';
@@ -93,7 +95,8 @@ console.log(siteArrays)
 
   const containerStyle = {
   width: "100%",
-  height: "80%",
+    height: "70%",
+
   };
 
 
@@ -110,14 +113,25 @@ if (loadError) throw new Error;
 if (!isLoaded) { return (<><p>Loading...</p></>) };
   
 return (
-    <>
+  <>
+   
       {!isMapopen ? (
-      <div>
-         <button onClick={geocode}>押す</button> 
-    </div>) :
+      
+        <div className={classes.container}>
+        <Image alt='cover' src='/img/top/cover.jpg' width={500} height={500}  objectFit='cover'/>
+            <div className={classes.text}>
+                <button onClick={geocode} className='text-2xl font-rich bg-gray-200 hover:bg-gray-100 bg-opacity-25 rounded px-4 py-2'>マップで探す</button> 
+            </div> 
+        <div className={classes.down}><p className='text-1.5xl font-rich'>一覧から探す</p></div>
+        <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
+        </div>
+        ) :
        
         
-      siteArrays.length && typeof window !== "undefined" ?
+      siteArrays.length && typeof window !== "undefined" ? (
+        <>
+          {/* ※GOOGOLE MAPは再背面に表示される…こっちをz-indexで前に出さないといけない★★★ */}
+      <div className={classes.mapcontainer}>
       <GoogleMap
         id="map"
         mapContainerStyle={containerStyle}
@@ -179,9 +193,16 @@ return (
         </InfoWindow>   
          }
         
-          </GoogleMap>
-        
-      : <Spinner />
+            </GoogleMap>
+
+
+<div className={classes.googlemap}>  
+      <Image alt='cover' src='/img/top/cover.jpg' width={500} height={200}  objectFit='cover'/>     
+          </div>
+        <div className={classes.down}><p className='text-1.5xl font-rich'>一覧から探す</p></div>
+        <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
+        </div>
+      </> ) : <Spinner />
       }
 
   </>    
