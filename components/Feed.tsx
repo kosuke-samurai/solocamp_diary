@@ -16,19 +16,21 @@ export const Feed: FC= () => {
 
   return (
  <>
-    <div className={classes.fullscreen}>
-        <div className={classes.container}>         
+    <div className="w-full snap-y snap-mandatory h-screen overflow-scroll">
+      <div className="snap-start w-screen h-screen w-full">         
             <Top />
-        </div> 
-        <div className={classes.container}>   
+      </div> 
+        <div className="snap-start w-screen h-screen">   
            <Top />
-        </div> 
-        <div className={classes.container}>   
+      </div> 
+      
+      
+        <div className='snap-start w-screen h-screen'>   
            <MapItem />
         </div> 
     
         
-          <div className="font-rich">
+          <div className='font-rich'>
             {sites?.map((site) => (
                   
                   <SiteItem

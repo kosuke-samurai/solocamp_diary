@@ -93,11 +93,10 @@ window.addEventListener('resize', () => {
 setFillHeight(); 
 }
 
-
   return (
       <>
       {!openEdit && (
-<div className={classes.container}>
+<div className='snap-start w-screen h-screen'>
 
         <div>
           {mainUrl && (
