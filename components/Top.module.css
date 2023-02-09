@@ -54,7 +54,7 @@
     /*描画位置※位置は適宜調整してください*/
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 120px;
 
     /*全体の高さ*/
     height: 50px;
@@ -70,7 +70,7 @@
     top: -15px;
     /*テキストの形状*/
     color: #fff;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
 }
 

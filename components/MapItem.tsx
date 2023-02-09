@@ -95,7 +95,7 @@ console.log(siteArrays)
 
   const containerStyle = {
   width: "100%",
-    height: "70%",
+    height: "60%",
 
   };
 
@@ -122,7 +122,7 @@ return (
             <div className={classes.text}>
                 <button onClick={geocode} className='text-2xl font-rich bg-gray-200 hover:bg-gray-100 bg-opacity-25 rounded px-4 py-2'>マップで探す</button> 
             </div> 
-        <div className={classes.down}><p className='text-1.5xl font-rich'>一覧から探す</p></div>
+        <div className={classes.down}><p className='text-1.7xl font-rich'>一覧から探す</p></div>
         <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
         </div>
         ) :
