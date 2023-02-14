@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import classes from './Top.module.css'
+import { TextFadeIn } from './TextFadeIn'
 
 export const Top = () => {
 
@@ -31,7 +32,7 @@ window.addEventListener('resize', () => {
         <Image alt='top' src='/img/top/camp_top.jpg' width={500} height={500} layout='responsive' objectFit='contain'/>   
                 <div className={classes.title}>
                     <h1 className='text-2xl font-rich font-bold'>ソロキャン日和@九州</h1>
-                    <p className='px-1 text-xs font-rich'>福岡在住ソロキャンパーが九州のサイトをメモする備忘録。</p>
+                    <TextFadeIn><p className='px-1 text-xs font-rich'>福岡在住ソロキャンパーによる九州のサイト備忘録。</p></TextFadeIn>
                 </div> 
         <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
       </div>
