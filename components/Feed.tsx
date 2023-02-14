@@ -20,10 +20,6 @@ export const Feed: FC= () => {
       <div className="snap-start w-screen h-screen w-full">         
             <Top />
       </div> 
-        <div className="snap-start w-screen h-screen">   
-           <Top />
-      </div> 
-      
       
         <div className='snap-start w-screen h-screen'>   
            <MapItem />
