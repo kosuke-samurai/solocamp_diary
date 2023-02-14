@@ -13,6 +13,8 @@
     width: 100%;
     height: 100%;
     position: relative;
+
+    z-index: 20;
 }
 
 .image_container.image {
@@ -27,7 +29,7 @@
     padding: 0 2%;
     bottom: 2%;
     width: 100%;
-    
+    z-index: 30;
     color: #FFFFFF;
 }
 

@@ -118,7 +118,7 @@ return (
       {!isMapopen ? (
       
         <div className={classes.container}>
-        <Image alt='cover' src='/img/top/cover.jpg' width={500} height={500}  objectFit='cover'/>
+        <Image alt='cover' src='/img/top/cover.jpg' width={500} height={500}  layout='responsive' objectFit='cover'/>
             <div className={classes.text}>
                 <button onClick={geocode} className='text-2xl font-rich bg-gray-200 hover:bg-gray-100 bg-opacity-25 rounded px-4 py-2'>マップで探す</button> 
             </div> 
@@ -131,6 +131,7 @@ return (
       siteArrays.length && typeof window !== "undefined" ? (
         <>
           {/* ※GOOGOLE MAPは再背面に表示される…こっちをz-indexで前に出さないといけない★★★ */}
+      <div className={classes.container}>
       <div className={classes.mapcontainer}>
       <GoogleMap
         id="map"
@@ -196,12 +197,14 @@ return (
             </GoogleMap>
 
 
-<div className={classes.googlemap}>  
-      <Image alt='cover' src='/img/top/cover.jpg' width={500} height={200}  objectFit='cover'/>     
-          </div>
+<div className={classes.mapcover}>  
+      <Image alt='cover' src='/img/top/cover.jpg' width={500} height={200} layout='responsive' objectFit='cover'/>     
+            </div>
+        <div ><button onClick={()=>{SetIsMapopen(false)}} className='text-1.5xl font-rich'>戻る</button></div>   
         <div className={classes.down}><p className='text-1.5xl font-rich'>一覧から探す</p></div>
         <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
-        </div>
+            </div>
+           </div> 
       </> ) : <Spinner />
       }
 

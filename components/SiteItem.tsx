@@ -107,6 +107,9 @@ setFillHeight();
               className=""
               width={500}
               height={20}
+               layout='responsive' 
+        
+                  
                 />
             <div className={classes.site_title}>
                   <h1 className="text-2xl font-bold">{title}</h1>

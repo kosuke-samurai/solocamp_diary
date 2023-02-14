@@ -27,12 +27,11 @@ window.addEventListener('resize', () => {
 
   return (
     <>
-
       <div className={classes.container}>
-        <Image alt='top' src='/img/top/camp_top.jpg' width={500} height={500} layout='responsive' objectFit='cover'/>   
+        <Image alt='top' src='/img/top/camp_top.jpg' width={500} height={500} layout='responsive' objectFit='contain'/>   
                 <div className={classes.title}>
-                    <h1 className='text-2xl font-rich font-bold'>ソロキャン日和<br/>@九州</h1>
-                    <p className='px-1 text-xs font-rich'>福岡在住ソロキャンパーが九州のサイトをメモする備忘録。誰かの豊かなソロキャンライフの一助に--。</p>
+                    <h1 className='text-2xl font-rich font-bold'>ソロキャン日和@九州</h1>
+                    <p className='px-1 text-xs font-rich'>福岡在住ソロキャンパーが九州のサイトをメモする備忘録。</p>
                 </div> 
         <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
       </div>
