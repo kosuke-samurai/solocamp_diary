@@ -50,7 +50,7 @@ window.addEventListener('resize', () => {
         end: '+=10', //アニメーション開始位置から1000px固定する
         pin: true, //トリガー要素を固定する
         scrub: 5, //1秒間余韻で動く
-        markers: true, //アニメーションが始まる位置
+        markers: false, //アニメーションが始まる位置
       },
       //fromの設定
     });
@@ -62,20 +62,20 @@ window.addEventListener('resize', () => {
 
     custom_scroll.to('#wrapper', { keyframes: [
       { opacity: 0, y: 40,ease: "power3.out" },   
-    ]},"+=15");
+    ]},"<15");
     
     custom_scroll.to('#wrapper_subtitle', { keyframes: [
       { opacity: 100, y: 40, ease: "power3.out" },
   
-    ]}, "+=20");
+    ]}, "<20");
     
     custom_scroll.to('#wrapper_subtitle', { keyframes: [
       { opacity: 0, y: 40,ease: "power3.out" },
-]}, "+=20");
+]}, "<20");
 
     custom_scroll.to('#wrapper_text', { keyframes: [
       { opacity: 100, y: 40, ease: "power3.out" },  
-  ]}, "+=20");
+  ]}, "<20");
       
     // gsap.to(
     //   '#wrapper_subtitle',
