@@ -51,17 +51,26 @@
     color: #fff;
     
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 20%;
 }
 
-.text{
+.text_1{
         text-align: center;
         color: #fff;
         
         position: absolute;
-        top: 50%;
-        right: 20%;
+        top: 40%;
+        left: 18%;
+}
+
+.text_2 {
+    text-align: center;
+    color: #fff;
+
+    position: absolute;
+    top: 50%;
+    right: 20%;
 }
 
 

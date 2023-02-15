@@ -62,20 +62,20 @@ window.addEventListener('resize', () => {
 
     custom_scroll.to('#wrapper', { keyframes: [
       { opacity: 0, y: 40,ease: "power3.out" },   
-    ]},"<15");
+    ]},"<20");
     
     custom_scroll.to('#wrapper_subtitle', { keyframes: [
       { opacity: 100, y: 40, ease: "power3.out" },
   
-    ]}, "<20");
+    ]}, "<2");
     
     custom_scroll.to('#wrapper_subtitle', { keyframes: [
       { opacity: 0, y: 40,ease: "power3.out" },
-]}, "<20");
+]}, "<2");
 
     custom_scroll.to('#wrapper_text', { keyframes: [
       { opacity: 100, y: 40, ease: "power3.out" },  
-  ]}, "<20");
+  ]}, "<2");
       
     // gsap.to(
     //   '#wrapper_subtitle',
@@ -126,10 +126,10 @@ window.addEventListener('resize', () => {
           <h1 className='text-2xl font-rich font-bold' id="wrapper">ソロキャン日和@九州</h1>
           <TextFadeIn><p className='px-1 text-xs font-rich' id="wrapper">福岡在住ソロキャンパーによる九州のサイト備忘録。</p></TextFadeIn>
         </div>
-        <div className={classes.subtitle}>
-          <p className='px-1 text-xs font-rich' id="wrapper_subtitle">広がる海、そびえる山、見下ろす街並みと夜景ーー。九州には魅力あふれるキャンプ場がたくさんありました。</p>   
+        <div className={classes.text_1}>
+          <p className='px-1 text-xs font-rich' id="wrapper_text">広がる海、そびえる山、見下ろす街並みと夜景ーー。九州には魅力あふれるキャンプ場がたくさんありました。</p>   
         </div>  
-        <div className={classes.text}> 
+        <div className={classes.text_2}> 
           <p className='px-1 text-xs font-rich' id="wrapper_text">その一部をのぞいてみてください。誰かの豊かなソロキャンライフの助けになれたら幸いです。</p>
         </div>  
   
