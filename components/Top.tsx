@@ -47,7 +47,7 @@ window.addEventListener('resize', () => {
       scrollTrigger: {
         trigger: '#wrapper-trigger',//アニメーションが始まるトリガーとなる要素。この要素が固定される
         start: 'center center',
-        end: '+=10', //アニメーション開始位置から1000px固定する
+        end: '+=50', //アニメーション開始位置から1000px固定する
         pin: true, //トリガー要素を固定する
         scrub: 5, //1秒間余韻で動く
         markers: false, //アニメーションが始まる位置
@@ -61,20 +61,20 @@ window.addEventListener('resize', () => {
   //   });
 
     custom_scroll.to('#wrapper', { keyframes: [
-      { opacity: 0, y: 40,ease: "power3.out" },   
+      { opacity: 0, y: 40,ease: "power4.out" },   
     ]},"<20");
     
     custom_scroll.to('#wrapper_subtitle', { keyframes: [
-      { opacity: 100, y: 40, ease: "power3.out" },
+      { opacity: 100, y: 40, ease: "power4.out" },
   
     ]}, "<2");
     
     custom_scroll.to('#wrapper_subtitle', { keyframes: [
-      { opacity: 0, y: 40,ease: "power3.out" },
+      { opacity: 0, y: 40,ease: "power4.out" },
 ]}, "<2");
 
     custom_scroll.to('#wrapper_text', { keyframes: [
-      { opacity: 100, y: 40, ease: "power3.out" },  
+      { opacity: 100, y: 40, ease: "power4.out" },  
   ]}, "<2");
       
     // gsap.to(
@@ -119,10 +119,11 @@ window.addEventListener('resize', () => {
   return (
     <>
      
-      <div className={classes.container} id="wrapper-trigger">
+      <div className={classes.container}>
         <Image alt='top' src='/img/top/camp_top.jpg' width={500} height={500} layout='responsive' />   
        
-        <div className={classes.title}>
+        
+        <div className={classes.title} id="wrapper-trigger">
           <h1 className='text-2xl font-rich font-bold' id="wrapper">ソロキャン日和@九州</h1>
           <TextFadeIn><p className='px-1 text-xs font-rich' id="wrapper">福岡在住ソロキャンパーによる九州のサイト備忘録。</p></TextFadeIn>
         </div>
@@ -132,7 +133,7 @@ window.addEventListener('resize', () => {
         <div className={classes.text_2}> 
           <p className='px-1 text-xs font-rich' id="wrapper_text">その一部をのぞいてみてください。誰かの豊かなソロキャンライフの助けになれたら幸いです。</p>
         </div>  
-  
+        
 
         <div className={classes.scrolldown}><span className='font-rich'>Scroll</span></div>
       </div>
