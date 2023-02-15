@@ -3,7 +3,9 @@ import { useQuerySites } from "@/hooks/useQuerySites";
 import { SiteItem } from "./SiteItem";
 import { Top } from "./Top";
 import { MapItem } from "./MapItem";
-import {AdminUpdateSite} from "./AdminUpdateSite";
+import { AdminUpdateSite } from "./AdminUpdateSite";
+
+import {Stikey} from './Stikey'
 
 import React from 'react';
 import classes from './Feed.module.css'
@@ -16,11 +18,13 @@ export const Feed: FC= () => {
 
   return (
  <>
-    <div className="w-full snap-y snap-mandatory h-screen overflow-scroll">
-      <div className="snap-start w-screen h-screen w-full">         
+    
+     
+                 
             <Top />
-      </div> 
+
       
+<div className="w-full snap-y snap-mandatory h-screen overflow-scroll">    
         <div className='snap-start w-screen h-screen'>   
            <MapItem />
         </div> 

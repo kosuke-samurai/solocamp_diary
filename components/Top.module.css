@@ -46,6 +46,23 @@
     -ms-transform: translateY(-50%,-50%);
 }
 
+.subtitle{
+    text-align: center;
+    color: #fff;
+    
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+.text{
+        text-align: center;
+        color: #fff;
+        
+        position: absolute;
+        top: 50%;
+        right: 20%;
+}
 
 
 

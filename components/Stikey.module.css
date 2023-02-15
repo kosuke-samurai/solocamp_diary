@@ -1,0 +1,8 @@
+.fadein{
+position: sticky;
+top: 0;
+}
+
+.fix{
+    position: fixed;
+}
