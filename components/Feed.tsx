@@ -22,14 +22,15 @@ export const Feed: FC= () => {
      
      
    
-            <Top />
+       
+        <Top />
       
-   <div className="w-full snap-y snap-mandatory h-screen overflow-scroll"> 
+   
         <div className='snap-start w-screen h-screen'>   
            <MapItem />
         </div> 
     
-        
+        <div className="w-full snap-y snap-mandatory h-screen  overflow-scroll"> 
           <div className='font-rich'>
             {sites?.map((site) => (
                   
