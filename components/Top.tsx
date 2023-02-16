@@ -4,7 +4,7 @@ import classes from './Top.module.css'
 import { TextFadeIn } from './TextFadeIn'
 import { Stikey } from './Stikey'
 
-import { gsap } from 'gsap'
+import { gsap, Power4 } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 export const Top = () => {
@@ -39,88 +39,104 @@ window.addEventListener('resize', () => {
   }, [])
 
   const settextAnimation = () => {
-      
-    gsap.set("#wrapper", { opacity: 100 },);
-    gsap.set("#wrapper_subtitle, #wrapper_text",  { opacity: 0},);
+
     
-    const custom_scroll = gsap.timeline({
+    gsap.to('#wrapper, #wrapper_subtitle', {
+      autoAlpha: 0,
+      duration: 2,
       scrollTrigger: {
-        trigger: '#wrapper-trigger',//アニメーションが始まるトリガーとなる要素。この要素が固定される
-        start: 'center center',
-        end: '+=50', //アニメーション開始位置から1000px固定する
-        pin: true, //トリガー要素を固定する
-        scrub: 5, //1秒間余韻で動く
-        markers: false, //アニメーションが始まる位置
-      },
-      //fromの設定
-    });
+        trigger: '#wrapper-trigger',//アニメーションが始まるトリガーとなる要素
+        start: 'top 20%', //アニメーションが始まる位置
+        markers: true,
+      }
+    })
+    
+    gsap.set("#wrapper_subtitle, #wrapper_text", { opacity: 0 },);
+
+    // gsap.to('#wrapper_subtitle', {
+    //   autoAlpha: 1,
+    //   ease: 'power4.out',
+    //   duration: 2,
+    //   scrollTrigger: {
+    //     trigger: '#wrapper-trigger',//アニメーションが始まるトリガーとなる要素
+    //     start: 'bottom 30%', //アニメーションが始まる位置
+    //     markers: true,
+    //   }
+    // })
+
+    gsap
+      .timeline({
+        autoAlpha: 0,
+        scrollTrigger: {
+        trigger: '#wrapper-trigger',//アニメーションが始まるトリガーとなる要素
+        start: 'top 30%', //アニメーションが始まる位置
+        markers: true,
+      }
+      })
+      .to('#wrapper_subtitle', { autoAlpha: 1, ease: 'power4.out', duration: 2 })
+      .to('#wrapper_subtitle', { autoAlpha: 0, ease: 'power4.out', duration: 2 },)
+    
+
+
+    gsap.to('#wrapper_text', {
+      autoAlpha: 1,
+      ease: 'power4.out',
+      duration: 2,
+      scrollTrigger: {
+        trigger: '#wrapper-trigger',//アニメーションが始まるトリガーとなる要素
+        start: 'bottom buttom', //アニメーションが始まる位置
+        markers: false,
+      }
+    })
+    
+
+
+  };
+      
+  //   gsap.set("#wrapper", { opacity: 100 },);
+
+    
+  //   const custom_scroll = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: '#wrapper-trigger',//アニメーションが始まるトリガーとなる要素。この要素が固定される
+  //       start: 'center center',
+  //       end: '+=50', //アニメーション開始位置から1000px固定する
+  //       pin: true, //トリガー要素を固定する
+  //       scrub: 5, //1秒間余韻で動く
+  //       markers: false, //アニメーションが始まる位置
+  //     },
+  //     //fromの設定
+  //   });
 
   //   custom_scroll.to('#wrapper', { keyframes: [
   // { opacity: 100 },
   //   ]
   //   });
 
-    custom_scroll.to('#wrapper', { keyframes: [
-      { opacity: 0, y: 40,ease: "power4.out" },   
-    ]},"<20");
+//     custom_scroll.to('#wrapper', { keyframes: [
+//       { opacity: 0, y: 40,ease: "power4.out" },   
+//     ]},"<20");
     
-    custom_scroll.to('#wrapper_subtitle', { keyframes: [
-      { opacity: 100, y: 40, ease: "power4.out" },
+//     custom_scroll.to('#wrapper_subtitle', { keyframes: [
+//       { opacity: 100, y: 40, ease: "power4.out" },
   
-    ]}, "<2");
+//     ]}, "<2");
     
-    custom_scroll.to('#wrapper_subtitle', { keyframes: [
-      { opacity: 0, y: 40,ease: "power4.out" },
-]}, "<2");
+//     custom_scroll.to('#wrapper_subtitle', { keyframes: [
+//       { opacity: 0, y: 40,ease: "power4.out" },
+// ]}, "<2");
 
-    custom_scroll.to('#wrapper_text', { keyframes: [
-      { opacity: 100, y: 40, ease: "power4.out" },  
-  ]}, "<2");
+//     custom_scroll.to('#wrapper_text', { keyframes: [
+//       { opacity: 100, y: 40, ease: "power4.out" },  
+//   ]}, "<2");
       
-    // gsap.to(
-    //   '#wrapper_subtitle',
-    //     {
-    // y: 800,
-    // scrollTrigger: {
-    // trigger: '#wrapper',//アニメーションが始まるトリガーとなる要素。この要素が固定される
-    // start: 'bottom bottom', //アニメーションが始まる位置
-    // end: '+=5', //アニメーション開始位置から1000px固定する
-    // pin: true, //トリガー要素を固定する
-    // scrub: 5, //1秒間余韻で動く
-    // markers: true,
-    //         },
-    // stagger: {
-    // from: "center", //左からアニメーション start、center、edges、random、endが指定できる
-    // amount: 0.1 //どのくらいの割合でズラすか
-    //  }
-    //     }, //fromの設定
-    // )
-      
-    //   gsap.to(
-    //   '#wrapper_text',
-    //     {
-    // y: 800,
-    // scrollTrigger: {
-    // trigger: '#wrapper_subtitle',//アニメーションが始まるトリガーとなる要素。この要素が固定される
-    // start: 'bottom bottom', //アニメーションが始まる位置
-    // end: '+=5', //アニメーション開始位置から1000px固定する
-    // pin: true, //トリガー要素を固定する
-    // scrub: 5, //1秒間余韻で動く
-    // markers: true,
-    //         },
-    // stagger: {
-    // from: "center", //左からアニメーション start、center、edges、random、endが指定できる
-    // amount: 0.1 //どのくらいの割合でズラすか
-    //  }
-    //     }, //fromの設定
-    // )
-  }
+//   }
 
   return (
     <>
      
       <div className={classes.container}>
-        <Image alt='top' src='/img/top/camp_top.jpg' width={500} height={500} layout='responsive' />   
+        <div className={classes.sticky}><Image alt='top' src='/img/top/camp_top.jpg' width={500} height={500} layout='responsive' /> </div> 
        
         
         <div className={classes.title} id="wrapper-trigger">
@@ -128,7 +144,7 @@ window.addEventListener('resize', () => {
           <TextFadeIn><p className='px-1 text-xs font-rich' id="wrapper">福岡在住ソロキャンパーによる九州のサイト備忘録。</p></TextFadeIn>
         </div>
         <div className={classes.text_1}>
-          <p className='px-1 text-xs font-rich' id="wrapper_text">広がる海、そびえる山、見下ろす街並みと夜景ーー。九州には魅力あふれるキャンプ場がたくさんありました。</p>   
+          <p className='px-1 text-xs font-rich' id="wrapper_subtitle">広がる海、そびえる山、見下ろす街並みと夜景ーー。九州には魅力あふれるキャンプ場がたくさんありました。</p>   
         </div>  
         <div className={classes.text_2}> 
           <p className='px-1 text-xs font-rich' id="wrapper_text">その一部をのぞいてみてください。誰かの豊かなソロキャンライフの助けになれたら幸いです。</p>

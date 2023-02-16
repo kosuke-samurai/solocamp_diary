@@ -20,11 +20,11 @@ export const Feed: FC= () => {
  <>
     
      
-                 
+     
+   
             <Top />
-
       
-<div className="w-full snap-y snap-mandatory h-screen overflow-scroll">    
+   <div className="w-full snap-y snap-mandatory h-screen overflow-scroll"> 
         <div className='snap-start w-screen h-screen'>   
            <MapItem />
         </div> 
