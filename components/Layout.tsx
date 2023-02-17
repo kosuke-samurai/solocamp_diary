@@ -48,8 +48,10 @@ export const Layout = (props: Props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.title} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.title} />
+                <ListItemButton sx={{ textAlign: 'center' }}>
+                    <Link href={{ pathname: `${item.url}`}}>
+                        <ListItemText primary={item.title} />
+                    </Link>
             </ListItemButton>
           </ListItem>
         ))}
