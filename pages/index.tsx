@@ -3,6 +3,8 @@ import { useEffect } from "react"
 import useStore from "@/Store"
 import { supabase } from "@/utils/supabase"
 import { Feed } from "@/components/Feed"
+import { Layout } from '@/components/Layout'
+import classes from '../components/Layout.module.css'
 
 const Home: NextPage = () => {
   const session = useStore((state) => state.session)
@@ -17,8 +19,14 @@ const Home: NextPage = () => {
   
   return (
     <>
+<div className={classes.layout}>
+        <Layout />
+</div>
 
+<div className={classes.layout}>
         <Feed />
+</div>
+
 
     </> 
   )
