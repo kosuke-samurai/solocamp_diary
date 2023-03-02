@@ -262,7 +262,7 @@ setFillHeight();
             
               <AdminUpdateSite />
            
-            <div className="absolute bottom-0 left-1/3">
+            <div className="absolute bottom-1 left-1/3">
                   <button
                       className="w-full rounded bg-indigo-600 text-xs text-white px-12 py-1"
                 onClick={() => { setOpenEdit(!openEdit) }}>戻る</button>
