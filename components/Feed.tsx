@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC,useState } from "react";
 import { useQuerySites } from "@/hooks/useQuerySites";
 import { SiteItem } from "./SiteItem";
 import { Top } from "./Top";
@@ -15,17 +15,19 @@ import classes from './Feed.module.css'
 export const Feed: FC= () => {
     const { data: sites } = useQuerySites()
     
+  const [openEdit, setOpenEdit] = useState(false);
 
+  const changeState = (isState:any) => {
+ setOpenEdit(isState)
+}
+
+
+  
   return (
- <>
     
-     
-     
-   
-       
+        <>
         <Top />
       
-   
         <div className='snap-start w-screen h-screen'>   
            <MapItem />
         </div> 
@@ -57,6 +59,7 @@ export const Feed: FC= () => {
                     other={site.other}
                     reserve={site.reserve}
                 adress={site.adress}
+                price={site.price}
                 />
                 
               ))}
@@ -64,8 +67,6 @@ export const Feed: FC= () => {
         
          
     </div>
-         
-
-</>
+</>         
   )
 }

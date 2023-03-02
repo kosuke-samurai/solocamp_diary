@@ -30,6 +30,12 @@ import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
 import HikingIcon from '@mui/icons-material/Hiking';
 import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 
+
+
+
+
+
+
 export const SiteItemMemo: FC<Site> = ({
     id,
     created_at,
@@ -51,8 +57,10 @@ export const SiteItemMemo: FC<Site> = ({
     water,
     other,
     reserve,
-    adress,
+  adress,
+    price,
 }) => {
+
 
     
     const session = useStore((state) => state.session)
@@ -68,6 +76,11 @@ export const SiteItemMemo: FC<Site> = ({
     //追記↓
     const [openEdit, setOpenEdit] = useState(false)
 
+  
+  const onToggleChanget = () => {
+  setOpenEdit(!openEdit)
+  }
+  
 //追記↓CSS
 if (typeof window !== "undefined") {
  
@@ -96,6 +109,7 @@ setFillHeight();
   return (
       <>
       {!openEdit && (
+
 <div className='snap-start w-screen h-screen'>
 
         
@@ -116,7 +130,7 @@ setFillHeight();
                   <h1 className="text-2xl font-bold">{title}</h1>
                   <p className="text-xs">{hitokoto}</p>
             </div>
-          {/* </div> */}
+  
           
        
         <div>
@@ -152,7 +166,7 @@ setFillHeight();
                   <Button><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br/><p className='font-rich text-xs'>ペグ{pegs}</p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small"/><br/><p className='font-rich text-xs'>炭捨{sumi}</p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><HikingIcon fontSize="small" /><br /><p className='font-rich text-xs'>{style}</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small"/><br/><p className='font-rich text-xs'>1500円</p></Box></Button>
+                      <Button><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small" /><br /><p className='font-rich text-xs'>{price}</p></Box></Button>
                 </ButtonGroup>            
               </Box >
 
@@ -178,7 +192,7 @@ setFillHeight();
               <dt className="md:text-slate-200 text-xs font-medium text-gray-500">予約</dt>
               <dd className="md:text-white mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">{reserve}</dd>
             </div>
-        {/* </dl>       */}
+
 
       <div className="md:bg-transparent bg-white px-1 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <div className="flex">
@@ -189,8 +203,10 @@ setFillHeight();
                                 
                                     <PencilAltIcon
                                     className="mx-1 h-5 w-5 cursor-pointer text-blue-500"
-                                        onClick={() => {
-                                          setOpenEdit(!openEdit)
+                                    onClick={() => {
+                                          
+                                          setOpenEdit(!openEdit);
+                                        
                                           update({
                                               id: id,
                                               title: title,
@@ -210,7 +226,8 @@ setFillHeight();
                                               water: water,
                                               other: other,
                                               reserve: reserve,
-                                              adress: adress,
+                                            adress: adress,
+                                            price: price,
                                               })
                                         }}
                                         /> 
@@ -235,18 +252,24 @@ setFillHeight();
 </>          
 )} 
        
-</div>
+            </div>
 )}
           
           {session?.user?.id === user_id && openEdit && (
-        <div>  
-        <div className="w-10/12 mx-auto md:max-w-md">
+        <> 
+        <div>
+          <div className="relative">
+            
               <AdminUpdateSite />
+           
+            <div className="absolute bottom-0 left-1/3">
                   <button
-                      className="w-full flex justify-center my-5 rounded bg-indigo-600 px-3 py-2 text-sm font-medium text-white"
-                      onClick={() => { setOpenEdit(!openEdit) }}>戻る</button>
-          </div>
+                      className="w-full rounded bg-indigo-600 text-xs text-white px-12 py-1"
+                onClick={() => { setOpenEdit(!openEdit) }}>戻る</button>
+            </div>
+           </div>  
         </div>  
+        </>  
     )}
       </>
   )

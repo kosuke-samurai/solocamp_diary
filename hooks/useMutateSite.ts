@@ -48,7 +48,8 @@ export const useMutateSite = () => {
                     water: site.water,
                     other: site.other,
                     reserve: site.reserve,
-                    adress: site.adress
+                    adress: site.adress,
+                    price: site.price
                 })
                 .eq('id', site.id)
             

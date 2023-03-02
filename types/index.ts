@@ -20,6 +20,7 @@ export type Site = {
     other: string | undefined
     reserve: string | undefined
     adress: string | undefined 
+    price: string | undefined
 }
 
 export type EditedSite = {
@@ -44,4 +45,5 @@ export type EditedSite = {
     other: string | undefined
     reserve: string | undefined
     adress: string | undefined 
+    price: string | undefined
 }

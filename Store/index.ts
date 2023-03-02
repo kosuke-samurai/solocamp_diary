@@ -37,7 +37,8 @@ const useStore = create<State>((set) => ({
     water: '',
     other: '',
     reserve: '',
-    adress: ''
+    adress: '',
+    price:''
     },
 
     updatedEditedSite: (payload) =>
@@ -64,6 +65,7 @@ const useStore = create<State>((set) => ({
                 other: payload.other,
                 reserve: payload.reserve,
                 adress: payload.adress,
+                price: payload.price,
             },
         }),
     
@@ -91,7 +93,8 @@ const useStore = create<State>((set) => ({
     water: '',
     other: '',
     reserve: '',
-    adress: ''
+    adress: '',
+    price: '',       
             }
         }),
 }))

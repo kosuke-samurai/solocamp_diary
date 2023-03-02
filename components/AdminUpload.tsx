@@ -1,4 +1,4 @@
-import { FormEvent, FC, memo } from "react";
+import { FormEvent, FC, memo,useState } from "react";
 
 import { LogoutIcon, CameraIcon } from "@heroicons/react/solid";
 import useStore from "@/Store";
@@ -18,6 +18,7 @@ export const AdminUploadMemo: FC = () => {
     const { createSiteMutation } = useMutateSite()
     const { useMutateUploadMainImg } = useUploadMainImg()
     
+  
     const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (editedSite.id === '') {
@@ -40,7 +41,8 @@ export const AdminUploadMemo: FC = () => {
                 water: editedSite.water,
                 other: editedSite.other,
                 reserve: editedSite.reserve,
-                adress: editedSite.adress,
+              adress: editedSite.adress,
+                price: editedSite.price,
             })
         }
         
@@ -50,6 +52,7 @@ export const AdminUploadMemo: FC = () => {
         resetsite()
         supabase.auth.signOut()
     }
+  
 
     return (
         <>
@@ -121,7 +124,7 @@ export const AdminUploadMemo: FC = () => {
     </div>
         
 
-    <div className="mb-8">
+    {/* <div className="mb-8">
       <label className="text-sm block font-bold">直火</label>
       <input
         className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
@@ -129,86 +132,93 @@ export const AdminUploadMemo: FC = () => {
         value={editedSite.jikabi || ''}
         onChange={(e) => update({ ...editedSite, jikabi: e.target.value })}
           />
+    </div> */}
+    
+   <div className="mb-8">
+        <label className="text-sm block font-bold">直火</label>
+            <select value={editedSite.jikabi || ''} onChange={(e) => update({ ...editedSite, jikabi: e.target.value })}>
+              <option value='OK'>OK</option>
+              <option value='NG'>NG</option>
+            </select>
+   </div>
+
+
+
+    <div className="mb-8">
+        <label className="text-sm block font-bold">眺望</label>
+          <select value={editedSite.view || ''} onChange={(e) => update({ ...editedSite, view: e.target.value })}>
+                <option value="林間">林間</option>
+                <option value="海">大海</option>
+                <option value="川">渓流</option>
+                <option value="山並み">山並み</option>
+                <option value="夜景">夜景</option>
+          </select>
     </div>
     
 
     <div className="mb-8">
-      <label className="text-sm block font-bold">眺望</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.view || ''}
-        onChange={(e) => update({ ...editedSite, view: e.target.value })}
-          />
-    </div>
-    
-
-    <div className="mb-8">
-      <label className="text-sm block font-bold">ペグ</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.pegs || ''}
-        onChange={(e) => update({ ...editedSite, pegs: e.target.value })}
-          />
+        <label className="text-sm block font-bold">ペグ</label>
+          <select value={editedSite.pegs || ''} onChange={(e) => update({ ...editedSite, pegs: e.target.value })}>
+            <option value="土">土</option>
+            <option value="砂利">砂利</option>
+            <option value="芝">芝</option>        
+          </select>      
     </div>
     
 
     <div className="mb-8">
       <label className="text-sm block font-bold">ごみ</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.rubbish || ''}
-        onChange={(e) => update({ ...editedSite, rubbish: e.target.value })}
-          />
+          <select value={editedSite.rubbish || ''} onChange={(e) => update({ ...editedSite, rubbish: e.target.value })}>
+            <option value="持帰り">持帰り</option>
+            <option value="捨場有">捨場有</option>    
+          </select>
     </div>
 
 
     <div className="mb-8">
       <label className="text-sm block font-bold">消し炭捨て場</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.sumi || ''}
-        onChange={(e) => update({ ...editedSite, sumi: e.target.value })}
-          />
+        <select value={editedSite.sumi || ''} onChange={(e) => update({ ...editedSite, sumi: e.target.value })}>
+          <option value="有り">有り</option>   
+          <option value="無し">無し</option>       
+        </select>
     </div>
 
 
     <div className="mb-8">
       <label className="text-sm block font-bold">荷物量</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.baggage || ''}
-        onChange={(e) => update({ ...editedSite, baggage: e.target.value })}
-          />
+        <select value={editedSite.baggage || ''} onChange={(e) => update({ ...editedSite, baggage: e.target.value })}>
+          <option value="多め可">多め可</option> 
+          <option value="少なめ">少なめ</option>      
+        </select>
     </div>
     
                 
     <div className="mb-8">
       <label className="text-sm block font-bold">スタイル</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.style || ''}
-        onChange={(e) => update({ ...editedSite, style: e.target.value })}
-          />
+        <select value={editedSite.style || ''} onChange={(e) => update({ ...editedSite, style: e.target.value })}>
+          <option value="いす">いす</option>  
+          <option value="地べた">地べた</option> 
+        </select>
     </div>
     
                 
     <div className="mb-8">
       <label className="text-sm block font-bold">買い出し</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.food || ''}
-        onChange={(e) => update({ ...editedSite, food: e.target.value })}
-          />
+      <select value={editedSite.food || ''} onChange={(e) => update({ ...editedSite, food: e.target.value })}>
+        <option value="簡単">簡単</option> 
+        <option value="難あり">難あり</option>         
+      </select>
     </div>
     
-                
+    <div className="mb-8">
+      <label className="text-sm block font-bold">水</label>
+      <select value={editedSite.water || ''} onChange={(e) => update({ ...editedSite, water: e.target.value })}>
+        <option value="場内に有">場内に有</option>
+        <option value="持込み">持込み</option>        
+      </select>
+
+    </div>
+            
     <div className="mb-8">
       <label className="text-sm block font-bold">温泉</label>
       <input
@@ -219,16 +229,6 @@ export const AdminUploadMemo: FC = () => {
           />
     </div>
     
-                
-    <div className="mb-8">
-      <label className="text-sm block font-bold">水</label>
-      <input
-        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
-        type="text"
-        value={editedSite.water || ''}
-        onChange={(e) => update({ ...editedSite, water: e.target.value })}
-          />
-    </div>
                 
     
     <div className="mb-8">
@@ -263,6 +263,15 @@ export const AdminUploadMemo: FC = () => {
           />
     </div>
 
+    <div className="mb-8">
+      <label className="text-sm block font-bold">値段</label>
+      <input
+        className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50"
+        type="text"
+        value={editedSite.price || ''}
+        onChange={(e) => update({ ...editedSite, price: e.target.value })}
+          />
+    </div>
 
       <button
         className={`my-5 rounded ${

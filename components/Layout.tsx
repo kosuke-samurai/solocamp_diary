@@ -56,6 +56,7 @@ export const Layout = (props: Props) => {
           </ListItem>
         ))}
       </List>
+      <p className='text-xs'>©タカハシ</p>
     </Box>
   );
 
