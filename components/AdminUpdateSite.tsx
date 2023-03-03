@@ -130,7 +130,7 @@ export const AdminUpdateSiteMemo: FC = () => {
      <div className={classes.pc_site_text}> 
               <p className="text-xs"><LocationOnIcon fontSize='small' />
                 <input
-                className='border w-10/12 outline-none'
+                className='border w-10/12 outline-none bg-transparent'
                 type="text"
                 value={editedSite.adress || ''}
                 onChange={(e) => update({ ...editedSite, adress: e.target.value })}
@@ -151,75 +151,96 @@ export const AdminUpdateSiteMemo: FC = () => {
                       }
               > 
               <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
-                  <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>直火
-                    <input
-                   className="w-16"
-                        type="text"
+                  <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>
+                    <select
+                   className="w-16 bg-transparent border outline-none"
                         value={editedSite.jikabi || ''}
                         onChange={(e) => update({ ...editedSite, jikabi: e.target.value })}
-                          /></p></Box></Button>
+                        >
+                        <option value='OK'>OK</option>
+                        <option value='NG'>NG</option></select></p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br /><p className='font-rich text-xs'>
-                      <input
-                          className="w-16"
-                          type="text"
+                      <select
+                          className="w-16 bg-transparent border outline-none"
                           value={editedSite.view || ''}
                           onChange={(e) => update({ ...editedSite, view: e.target.value })}
-                            /></p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>
-                    <input
-                          className="w-16"
-                          type="text"
+                        >
+                <option value="林間">林間</option>
+                <option value="海">大海</option>
+                <option value="川">渓流</option>
+                <option value="山並み">山並み</option>
+                <option value="夜景">夜景</option></select></p></Box></Button>
+                  
+                <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>
+                    <select
+                          className="w-16 bg-transparent border outline-none"
                           value={editedSite.food || ''}
                           onChange={(e) => update({ ...editedSite, food: e.target.value })}
-                            /></p></Box></Button>
+                        >
+                      <option value="簡単">簡単</option> 
+                      <option value="難あり">難あり</option>                          
+                  </select></p></Box></Button>
+                      
                   <Button><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>
-                    <input
-                        className="w-16"
-                        type="text"
+                    <select
+                        className="w-16 bg-transparent border outline-none"
                         value={editedSite.rubbish || ''}
                         onChange={(e) => update({ ...editedSite, rubbish: e.target.value })}
-                          /></p></Box></Button>
+                        >
+                      <option value="持帰り">持帰り</option>
+                      <option value="捨場有">捨場有</option></select></p></Box></Button>
+                      
                   <Button><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small" /><br /><p className='font-rich text-xs'>
-                    <input
-                          className="w-16"
-                          type="text"
+                    <select
+                          className="w-16 bg-transparent border outline-none"
                           value={editedSite.baggage || ''}
                           onChange={(e) => update({ ...editedSite, baggage: e.target.value })}
-                            /></p></Box></Button>
+                        >
+                      <option value="多め可">多め可</option> 
+                      <option value="少なめ">少なめ</option></select></p></Box></Button>
               </ButtonGroup>
 
               <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
                   <Button><Box sx={{ flexDirection: 'column' }}><LocalDrinkIcon fontSize="small" /><br /><p className='font-rich text-xs'>
-                    <input
-                          className="w-16"
-                          type="text"
+                    <select
+                          className="w-17 bg-transparent border outline-none"
                           value={editedSite.water || ''}
                           onChange={(e) => update({ ...editedSite, water: e.target.value })}
-                            /></p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br /><p className='font-rich text-xs'>ペグ
-                    <input
-                          className="w-16"
-                          type="text"
+                        >
+                      <option value="場内に有">場内に有</option>
+                      <option value="持込み">持込み</option>        
+                    </select></p></Box></Button>
+                  <Button><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br /><p className='font-rich text-xs'>
+                    <select
+                          className="w-16 bg-transparent border outline-none"
                           value={editedSite.pegs || ''}
                           onChange={(e) => update({ ...editedSite, pegs: e.target.value })}
-                            /></p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small" /><br /><p className='font-rich text-xs'>炭捨
-                  <input
-                      className="w-16"
-                      type="text"
+                        >
+                        <option value="土">土</option>
+                        <option value="砂利">砂利</option>
+                        <option value="芝">芝</option>        
+                      </select></p></Box></Button>
+                  <Button><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small" /><br /><p className='font-rich text-xs'>
+                  <select
+                      className="w-16 bg-transparent border outline-none"
                       value={editedSite.sumi || ''}
                       onChange={(e) => update({ ...editedSite, sumi: e.target.value })}
-                        /></p></Box></Button>
+                        >
+                    <option value="有り">有り</option>   
+                    <option value="無し">無し</option>       
+                  </select></p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><HikingIcon fontSize="small" /><br /><p className='font-rich text-xs'>
-                <input
-                      className="w-16"
-                      type="text"
+                <select
+                      className="w-16 bg-transparent border outline-none"
                       value={editedSite.style || ''}
                       onChange={(e) => update({ ...editedSite, style: e.target.value })}
-                        /></p></Box></Button>
+                        >
+                  <option value="いす">いす</option>  
+                  <option value="地べた">地べた</option> 
+                </select></p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small" /><br /><p className='font-rich text-xs'>
                 <input
-                      className="w-16"
+                      className="w-16 bg-transparent border outline-none"
                       type="text"
                       value={editedSite.price || ''}
                       onChange={(e) => update({ ...editedSite, price: e.target.value })}
@@ -233,7 +254,7 @@ export const AdminUpdateSiteMemo: FC = () => {
               <dt className="md:text-slate-200 text-xs font-medium text-gray-500">イチオシPOINT</dt>
                     <dd className="md:text-white mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">
                       <input
-                      className="w-full border outline-none"
+                      className="w-full border outline-none bg-transparent"
                       type="text"
                       value={editedSite.pros || ''}
                       onChange={(e) => update({ ...editedSite, pros: e.target.value })}
@@ -244,7 +265,7 @@ export const AdminUpdateSiteMemo: FC = () => {
               <dt className="md:text-slate-200 text-xs font-medium text-gray-500">イマイチPOINT</dt>
               <dd className="md:text-white mt-1 mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">
                    <input
-                      className="w-full border outline-none"
+                      className="w-full border outline-none bg-transparent"
                       type="text"
                       value={editedSite.cons || ''}
                       onChange={(e) => update({ ...editedSite, cons: e.target.value })}
@@ -255,7 +276,7 @@ export const AdminUpdateSiteMemo: FC = () => {
               <dt className="md:text-slate-200 text-xs font-medium text-gray-500">お風呂</dt>
               <dd className="md:text-white mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">
                   <input
-                      className="w-full border outline-none"
+                      className="w-full border outline-none bg-transparent"
                       type="text"
                       value={editedSite.onsen || ''}
                       onChange={(e) => update({ ...editedSite, onsen: e.target.value })}
@@ -266,7 +287,7 @@ export const AdminUpdateSiteMemo: FC = () => {
               <dt className="md:text-slate-200 text-xs font-medium text-gray-500">その他</dt>
                     <dd className="md:text-white mt-1 text-xs text-gray-900 sm:col-span-2 sm:mt-0">
                   <input
-                    className="w-full border outline-none"
+                    className="w-full border outline-none bg-transparent"
                     type="text"
                     value={editedSite.other || ''}
                     onChange={(e) => update({ ...editedSite, other: e.target.value })}
@@ -279,7 +300,7 @@ export const AdminUpdateSiteMemo: FC = () => {
                 
                 <div className="flex">        
                 <input
-                    className="flex-none border outline-none w-7/12"        
+                    className="flex-none border outline-none w-7/12 bg-transparent"        
                     type="text"
                     value={editedSite.reserve || ''}
                     onChange={(e) => update({ ...editedSite, reserve: e.target.value })}

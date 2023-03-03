@@ -35,7 +35,6 @@ import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 
 
 
-
 export const SiteItemMemo: FC<Site> = ({
     id,
     created_at,
@@ -105,7 +104,10 @@ window.addEventListener('resize', () => {
 // 初期化
 setFillHeight(); 
 }
-
+  
+  
+  
+ 
   return (
       <>
       {!openEdit && (
@@ -154,8 +156,8 @@ setFillHeight();
                       }
               > 
               <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
-                  <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small"/><p className='font-rich text-xs'>直火{jikabi}</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br/><p className='font-rich text-xs'>{view}</p></Box></Button>
+                      <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>直火{jikabi}</p></Box></Button>
+                      <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br /><p className='font-rich text-xs'>{view}</p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small"/><br/><p className='font-rich text-xs'>容易</p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small"/><br/><p className='font-rich text-xs'>{baggage}</p></Box></Button>
@@ -262,9 +264,9 @@ setFillHeight();
             
               <AdminUpdateSite />
            
-            <div className="absolute bottom-1 left-1/3">
+            <div className="absolute bottom-0 z-30 w-full sm:w-6/12 sm:left-1/4">
                   <button
-                      className="w-full rounded bg-indigo-600 text-xs text-white px-12 py-1"
+                      className="w-full rounded bg-indigo-600 text-xs text-white py-1"
                 onClick={() => { setOpenEdit(!openEdit) }}>戻る</button>
             </div>
            </div>  
