@@ -30,8 +30,8 @@ import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
 import HikingIcon from '@mui/icons-material/Hiking';
 import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 
-
-
+import Tooltip from '@mui/material/Tooltip';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 
 
 
@@ -75,10 +75,17 @@ export const SiteItemMemo: FC<Site> = ({
     //追記↓
     const [openEdit, setOpenEdit] = useState(false)
 
-  
-  const onToggleChanget = () => {
-  setOpenEdit(!openEdit)
-  }
+  //ツールチップ
+    const [open, setOpen] = useState(false);
+
+  const handleTooltipClose = () => {
+    setOpen(false);
+  };
+
+  const handleTooltipOpen = () => {
+    setOpen(true);
+  };
+
   
 //追記↓CSS
 if (typeof window !== "undefined") {
@@ -155,10 +162,42 @@ setFillHeight();
                       }
                       }
               > 
-              <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
-                      <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>直火{jikabi}</p></Box></Button>
+                    <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
+                     
+                        <Tooltip
+                            PopperProps={{
+                            disablePortal: true,
+                            sx: {
+                              top: "-50px !important"
+                              
+                              }
+                            }}
+                            onClose={handleTooltipClose}
+                            open={open}
+                            disableFocusListener
+                            disableHoverListener
+                            disableTouchListener
+                          title={<h1 style={{fontSize: "2px"}}>直火</h1>}
+                          >
+                      <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>{jikabi}</p></Box></Button>
+                          </Tooltip>
+                          
+                     
+                      
+                      
+                        <Tooltip
+                            PopperProps={{
+                            sx: {
+                              top: "-50px !important" 
+                              }
+                        }}
+                        disableFocusListener
+                          title={<h1 style={{fontSize: "2px"}}>風景</h1>}
+                          >
                       <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br /><p className='font-rich text-xs'>{view}</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small"/><br/><p className='font-rich text-xs'>容易</p></Box></Button>
+                        </Tooltip>
+                     
+                          <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>容易</p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>
                   <Button><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small"/><br/><p className='font-rich text-xs'>{baggage}</p></Box></Button>
               </ButtonGroup>
