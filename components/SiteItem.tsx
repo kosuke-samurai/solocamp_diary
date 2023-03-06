@@ -75,16 +75,7 @@ export const SiteItemMemo: FC<Site> = ({
     //追記↓
     const [openEdit, setOpenEdit] = useState(false)
 
-  //ツールチップ
-    const [open, setOpen] = useState(false);
 
-  const handleTooltipClose = () => {
-    setOpen(false);
-  };
-
-  const handleTooltipOpen = () => {
-    setOpen(true);
-  };
 
   
 //追記↓CSS
@@ -163,51 +154,97 @@ setFillHeight();
                       }
               > 
                     <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
-                     
                         <Tooltip
                             PopperProps={{
-                            disablePortal: true,
-                            sx: {
-                              top: "-50px !important"
-                              
-                              }
+                            sx: {top: "-50px !important"}
                             }}
-                            onClose={handleTooltipClose}
-                            open={open}
-                            disableFocusListener
-                            disableHoverListener
-                            disableTouchListener
-                          title={<h1 style={{fontSize: "2px"}}>直火</h1>}
+                          title={<p className='font-rich'>直火</p>}
                           >
-                      <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>{jikabi}</p></Box></Button>
-                          </Tooltip>
-                          
-                     
-                      
+                          <Button><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>{jikabi}</p></Box></Button>
+                        </Tooltip>
                       
                         <Tooltip
                             PopperProps={{
-                            sx: {
-                              top: "-50px !important" 
-                              }
+                            sx: {top: "-50px !important"}
                         }}
-                        disableFocusListener
-                          title={<h1 style={{fontSize: "2px"}}>風景</h1>}
+                          title={<p className='font-rich'>景色</p>}
                           >
-                      <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br /><p className='font-rich text-xs'>{view}</p></Box></Button>
+                          <Button><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br /><p className='font-rich text-xs'>{view}</p></Box></Button>
                         </Tooltip>
-                     
+                      
+                        <Tooltip
+                            PopperProps={{
+                              sx: { top: "-50px !important" }
+                            }}
+                            title={<p className='font-rich'>買い出し</p>}
+                              >
                           <Button><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>容易</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small"/><br/><p className='font-rich text-xs'>{baggage}</p></Box></Button>
-              </ButtonGroup>
+                        </Tooltip>
+                        
+                        <Tooltip
+                            PopperProps={{
+                            sx: {top: "-50px !important"}
+                            }}
+                          title={<p className='font-rich'>ゴミ</p>}
+                          >                
+                          <Button><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>
+                        </Tooltip>    
+                      
+                        <Tooltip
+                            PopperProps={{
+                            sx: {top: "-50px !important"}
+                            }}
+                          title={<p className='font-rich'>荷物量</p>}
+                          >  
+                            <Button><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small" /><br /><p className='font-rich text-xs'>{baggage}</p></Box></Button>
+                        </Tooltip>   
+            </ButtonGroup>
 
-              <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
-                  <Button><Box sx={{ flexDirection: 'column' }}><LocalDrinkIcon fontSize="small"/><br/><p className='font-rich text-xs'>{water}</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br/><p className='font-rich text-xs'>ペグ{pegs}</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small"/><br/><p className='font-rich text-xs'>炭捨{sumi}</p></Box></Button>
-                  <Button><Box sx={{ flexDirection: 'column' }}><HikingIcon fontSize="small" /><br /><p className='font-rich text-xs'>{style}</p></Box></Button>
-                      <Button><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small" /><br /><p className='font-rich text-xs'>{price}</p></Box></Button>
+                    <ButtonGroup variant="text" color='inherit' aria-label="text button group" fullWidth={true} >
+                      <Tooltip
+                            PopperProps={{
+                            sx: {top: "-50px !important"}
+                            }}
+                          title={<p className='font-rich'>飲料水</p>}
+                          >  
+                            <Button><Box sx={{ flexDirection: 'column' }}><LocalDrinkIcon fontSize="small"/><br/><p className='font-rich text-xs'>{water}</p></Box></Button>
+                      </Tooltip>  
+                      
+                      <Tooltip
+                            PopperProps={{
+                            sx: {top: "-50px !important"}
+                            }}
+                          title={<p className='font-rich'>地面</p>}
+                          >  
+                        <Button><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br /><p className='font-rich text-xs'>{pegs}</p></Box></Button>
+                      </Tooltip> 
+                      
+                      <Tooltip
+                            PopperProps={{
+                            sx: {top: "-50px !important"}
+                            }}
+                          title={<p className='font-rich'>炭捨て場</p>}
+                          >
+                        <Button><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small" /><br /><p className='font-rich text-xs'>{sumi}</p></Box></Button>
+                      </Tooltip>
+
+                      <Tooltip
+                            PopperProps={{
+                            sx: {top: "-50px !important"}
+                            }}
+                          title={<p className='font-rich'>スタイル</p>}
+                          >
+                        <Button><Box sx={{ flexDirection: 'column' }}><HikingIcon fontSize="small" /><br /><p className='font-rich text-xs'>{style}</p></Box></Button>
+                      </Tooltip>
+
+                      <Tooltip
+                            PopperProps={{
+                            sx: {top: "-50px !important"}
+                            }}
+                          title={<p className='font-rich'>料金</p>}
+                          >                 
+                        <Button><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small" /><br /><p className='font-rich text-xs'>{price}</p></Box></Button>
+                      </Tooltip>     
                 </ButtonGroup>            
               </Box >
 
