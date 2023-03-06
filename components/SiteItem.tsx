@@ -160,7 +160,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>直火</p>}
                           >
-                          <Button disabled><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>{jikabi}</p></Box></Button>
+                          <Button disableRipple><Box sx={{ flexDirection: 'column' }}><LocalFireDepartmentIcon fontSize="small" /><p className='font-rich text-xs'>{jikabi}</p></Box></Button>
                         </Tooltip>
                       
                         <Tooltip
@@ -169,7 +169,7 @@ setFillHeight();
                         }}
                           title={<p className='font-rich'>景色</p>}
                           >
-                          <Button disabled><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br /><p className='font-rich text-xs'>{view}</p></Box></Button>
+                          <Button disableRipple><Box sx={{ flexDirection: 'column' }}><CameraAltIcon fontSize="small" /><br /><p className='font-rich text-xs'>{view}</p></Box></Button>
                         </Tooltip>
                       
                         <Tooltip
@@ -178,7 +178,7 @@ setFillHeight();
                             }}
                             title={<p className='font-rich'>買い出し</p>}
                               >
-                          <Button disabled><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>容易</p></Box></Button>
+                          <Button disableRipple><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>容易</p></Box></Button>
                         </Tooltip>
                         
                         <Tooltip
@@ -187,7 +187,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>ゴミ</p>}
                           >                
-                          <Button disabled><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>
+                          <Button disableRipple><Box sx={{ flexDirection: 'column' }}><DeleteIcon fontSize="small" /><br /><p className='font-rich text-xs'>{rubbish}</p></Box></Button>
                         </Tooltip>    
                       
                         <Tooltip
@@ -196,7 +196,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>荷物量</p>}
                           >  
-                            <Button disabled><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small" /><br /><p className='font-rich text-xs'>{baggage}</p></Box></Button>
+                            <Button disableRipple><Box sx={{ flexDirection: 'column' }}><BusinessCenterIcon fontSize="small" /><br /><p className='font-rich text-xs'>{baggage}</p></Box></Button>
                         </Tooltip>   
             </ButtonGroup>
 
@@ -207,7 +207,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>飲料水</p>}
                           >  
-                            <Button disabled><Box sx={{ flexDirection: 'column' }}><LocalDrinkIcon fontSize="small"/><br/><p className='font-rich text-xs'>{water}</p></Box></Button>
+                            <Button disableRipple><Box sx={{ flexDirection: 'column' }}><LocalDrinkIcon fontSize="small"/><br/><p className='font-rich text-xs'>{water}</p></Box></Button>
                       </Tooltip>  
                       
                       <Tooltip
@@ -216,7 +216,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>地面</p>}
                           >  
-                        <Button disabled><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br /><p className='font-rich text-xs'>{pegs}</p></Box></Button>
+                        <Button disableRipple><Box sx={{ flexDirection: 'column' }}><HardwareIcon fontSize="small" /><br /><p className='font-rich text-xs'>{pegs}</p></Box></Button>
                       </Tooltip> 
                       
                       <Tooltip
@@ -225,7 +225,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>炭捨て場</p>}
                           >
-                        <Button disabled><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small" /><br /><p className='font-rich text-xs'>{sumi}</p></Box></Button>
+                        <Button disableRipple><Box sx={{ flexDirection: 'column' }}><TakeoutDiningIcon fontSize="small" /><br /><p className='font-rich text-xs'>{sumi}</p></Box></Button>
                       </Tooltip>
 
                       <Tooltip
@@ -234,7 +234,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>スタイル</p>}
                           >
-                        <Button disabled><Box sx={{ flexDirection: 'column' }}><HikingIcon fontSize="small" /><br /><p className='font-rich text-xs'>{style}</p></Box></Button>
+                        <Button disableRipple><Box sx={{ flexDirection: 'column' }}><HikingIcon fontSize="small" /><br /><p className='font-rich text-xs'>{style}</p></Box></Button>
                       </Tooltip>
 
                       <Tooltip
@@ -243,7 +243,7 @@ setFillHeight();
                             }}
                           title={<p className='font-rich'>料金</p>}
                           >                 
-                        <Button disabled><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small" /><br /><p className='font-rich text-xs'>{price}</p></Box></Button>
+                        <Button disableRipple><Box sx={{ flexDirection: 'column' }}><CurrencyYenIcon fontSize="small" /><br /><p className='font-rich text-xs'>{price}</p></Box></Button>
                       </Tooltip>     
                 </ButtonGroup>            
               </Box >
