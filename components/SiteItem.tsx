@@ -178,7 +178,7 @@ setFillHeight();
                             }}
                             title={<p className='font-rich'>買い出し</p>}
                               >
-                          <Button disableRipple><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>容易</p></Box></Button>
+                        <Button disableRipple><Box sx={{ flexDirection: 'column' }}><StorefrontIcon fontSize="small" /><br /><p className='font-rich text-xs'>{food}</p></Box></Button>
                         </Tooltip>
                         
                         <Tooltip

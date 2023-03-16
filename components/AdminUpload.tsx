@@ -19,6 +19,7 @@ export const AdminUploadMemo: FC = () => {
     const { useMutateUploadMainImg } = useUploadMainImg()
     
   
+  
     const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (editedSite.id === '') {
@@ -59,7 +60,8 @@ export const AdminUploadMemo: FC = () => {
             <p>管理者：{session?.user?.email}</p>
             <LogoutIcon
                 className='my-6 h-6 w-6 curor-pointer text-blue-500'
-                onClick={signOut} />
+          onClick={signOut} />
+        
     <form onSubmit={submitHandler}>
     <div className="w-10/12 mx-auto md:max-w-md">
       <div className="mb-8">
