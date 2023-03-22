@@ -36,9 +36,14 @@
     z-index: -10;
 }
 
+.top_cover{
+            width: 10vw;
+            height: 150vh;
+}
+
 .sticky{
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     position: -webkit-sticky;
     /* Safariに対応する */
     position: sticky;
@@ -105,8 +110,8 @@
 /*スクロールダウン全体の場所*/
 .scrolldown {
     /*描画位置※位置は適宜調整してください*/
-    /* left: 50%;
-    bottom: 120px; */
+    left: 50%;
+    bottom: 20%;
 
     /*全体の高さ*/
     /* height: 50px; */

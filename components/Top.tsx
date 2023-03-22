@@ -90,18 +90,24 @@ window.addEventListener('resize', () => {
     <>
      
       <div className={classes.container}>
-        <div className={classes.sticky}><Image alt='top' src='/img/top/camp_top.jpg' width={500} height={500} layout='responsive' /> </div> 
+        <div className={classes.sticky}>
+          <div>
+          <div className={classes.top_cover}>
+            <Image alt='top' src='/img/top/camp_top.jpg' layout='fill' objectFit='cover' />
+            </div>
+          </div>
+        </div> 
        
         
         <div className={classes.title} id="wrapper-trigger">
-          <h1 className='text-2xl font-rich font-bold' id="wrapper">ソロキャン日和@九州</h1>
-          <TextFadeIn><p className='px-1 text-xs font-rich' id="wrapper">福岡在住ソロキャンパーによる九州のサイト備忘録。</p></TextFadeIn>
+          <h1 className='text-2xl font-rich font-bold md:text-4xl' id="wrapper">ソロキャン日和@九州</h1>
+          <TextFadeIn><p className='px-1 text-xs font-rich md:my-2 md:text-xl' id="wrapper">福岡在住ソロキャンパーによる九州のサイト備忘録。</p></TextFadeIn>
         </div>
         <div className={classes.text_1}>
-          <p className='px-1 text-xs font-rich font-bold' id="wrapper_subtitle">広がる海、そびえる山、見下ろす街並みと夜景ーー。九州には魅力あふれるキャンプ場がたくさんありました。</p>   
+          <p className='px-1 text-xs font-rich font-bold md:text-xl' id="wrapper_subtitle">広がる海、そびえる山、見下ろす街並みと夜景ーー。九州には魅力あふれるキャンプ場がたくさんありました。</p>   
         </div>  
         <div className={classes.text_2}> 
-          <p className='px-1 text-xs font-rich font-bold' id="wrapper_text">その一部をのぞいてみてください。誰かの豊かなソロキャンライフの助けになれたら幸いです。</p>
+          <p className='px-1 text-xs font-rich font-bold md:text-xl' id="wrapper_text">その一部をのぞいてみてください。誰かの豊かなソロキャンライフの助けになれたら幸いです。</p>
         </div>  
         
 

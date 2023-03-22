@@ -117,8 +117,10 @@ return (
    
       {!isMapopen ? (
       
-        <div className={classes.container}>
-        <Image alt='cover' src='/img/top/cover.jpg' width={500} height={500}  layout='responsive' objectFit='cover'/>
+      <div className={classes.container}>
+        <div className='w-full h-screen'>
+          <Image alt='cover' src='/img/top/cover.jpg' layout='fill' objectFit='cover' />
+        </div>
             <div className={classes.text}>
                 <button onClick={geocode} className='text-2xl font-rich bg-gray-200 hover:bg-gray-100 bg-opacity-25 rounded px-4 py-2'>マップで探す</button> 
             </div> 
