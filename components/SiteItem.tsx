@@ -115,20 +115,21 @@ setFillHeight();
         
             {mainUrl && (
               <>
-          <div className={classes.image_container}>       
+            <div className={classes.image_container}>
+         
             <Image
               src={mainUrl}
               alt="Image"
-              className=""
               width={500}
               height={20}
-               layout='responsive' 
-        
-                  
-                />
-            <div className={classes.site_title}>
+                    layout='responsive'    
+                  />
+     
+            <div className={classes.site_title_cover}>
+              <div className={classes.site_title}>
                   <h1 className="text-2xl font-bold">{title}</h1>
-                  <p className="text-xs">{hitokoto}</p>
+                  <p className="text-xs font-bold">{hitokoto}</p>
+              </div>
             </div>
   
           
